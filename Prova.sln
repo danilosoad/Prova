@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova.API", "Prova\Prova.API.csproj", "{461788DC-B7D0-4C8D-AD26-29C95CD34416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova.Core", "Prova.Core\Prova.Core.csproj", "{75832C6D-A0B1-48A2-A13B-7C5A13CC09AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova.Infra", "Prova.Infra\Prova.Infra.csproj", "{128ACC51-78E6-43E2-9A2C-A10CFB18A291}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{461788DC-B7D0-4C8D-AD26-29C95CD34416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461788DC-B7D0-4C8D-AD26-29C95CD34416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461788DC-B7D0-4C8D-AD26-29C95CD34416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461788DC-B7D0-4C8D-AD26-29C95CD34416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75832C6D-A0B1-48A2-A13B-7C5A13CC09AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75832C6D-A0B1-48A2-A13B-7C5A13CC09AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75832C6D-A0B1-48A2-A13B-7C5A13CC09AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75832C6D-A0B1-48A2-A13B-7C5A13CC09AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{128ACC51-78E6-43E2-9A2C-A10CFB18A291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128ACC51-78E6-43E2-9A2C-A10CFB18A291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128ACC51-78E6-43E2-9A2C-A10CFB18A291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128ACC51-78E6-43E2-9A2C-A10CFB18A291}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E2735D2-4A6C-46F2-9C07-264EE5802113}
+	EndGlobalSection
+EndGlobal
