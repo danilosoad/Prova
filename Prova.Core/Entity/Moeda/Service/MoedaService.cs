@@ -91,6 +91,12 @@ namespace Prova.Core.Entity.Moeda.Service
 
                     resultadoDadosCotacao = dadosCotacaoCsvConvertidos.Where(x => codigosCotacao.Contains(x.CodigoCotacao)).ToList();
                 }
+
+                using (var writer = new StreamWriter($@"..\Resultado_{DateTime.Now.ToString("yyyyMMddHHmmss")}.csv"))
+                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                {
+                    csv.WriteRecords(resultadoDadosCotacao);
+                }
             }
         }
     }
