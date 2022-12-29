@@ -45,6 +45,12 @@ namespace Prova.Core.Entity.Moeda.Service
                     csv.Context.RegisterClassMap<DadosMoedaMap>();
                     var dadosCsv = csv.GetRecords<DadosMoedaCsv>().Skip(1).ToList();
 
+                    var dadosCsvConvertidos = new List<DadosMoeda>();
+
+                    foreach (var item in dadosCsv)
+                        dadosCsvConvertidos.Add(new DadosMoeda() { ID_MOEDA = item.ID_MOEDA, DATA_REF = Convert.ToDateTime(item.DATA_REF) });
+
+                    var resultado = dadosCsvConvertidos.Where(x => x.DATA_REF <= moeda.DataFim && x.DATA_REF >= moeda.DataInicio);
 
                     foreach (var dado in dadosCsv)
                         Console.WriteLine($"Moeda: {dado.ID_MOEDA}, Data: {dado.DATA_REF}");
