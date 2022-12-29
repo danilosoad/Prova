@@ -1,0 +1,21 @@
+Questão 1
+
+R:
+select COUNT(pr.IdProcesso), st.dsStatus from dbo.processo pr 
+join dbo.status st on pr.idStatus = st.idStatus 
+where pr.idStatus = 1 
+group by pr.IdProcesso, st.dsStatus
+
+Questão 2
+R:
+select MAX(an.dtAndamento) from dbo.andamento an 
+join dbo.processo pr on an.idProcesso = pr.IdProcesso
+join dbo.status st on pr.idStatus = st.idStatus
+where an.idProcesso = 1 and st.idStatus = 3 and an.dtAndamento <= '2013'
+
+
+Questão 3
+
+select COUNT(dtEncerramento) from dbo.processo 
+group by dtEncerramento  
+having COUNT(dtEncerramento) > 5
