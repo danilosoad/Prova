@@ -4,6 +4,6 @@
     {
         Task AddAsync(List<Moeda> moedas);
 
-        Task<List<Moeda>> Get();
+        Task<Moeda> GetLastRecord();
     }
 }

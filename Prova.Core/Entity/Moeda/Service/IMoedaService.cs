@@ -4,6 +4,8 @@
     {
         Task AddMoeda(List<Moeda> moedas);
 
-        Task<List<Moeda>> GetMoedas();
+        Task<Moeda> GetMoedas();
+
+        Task Teste();
     }
 }

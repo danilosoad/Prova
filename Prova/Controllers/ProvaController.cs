@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Hangfire;
+using Microsoft.AspNetCore.Mvc;
 using Prova.API.ViewModels;
 using Prova.API.ViewModels.Adapters;
 using Prova.Core.Entity.Moeda.Service;
@@ -14,6 +15,7 @@ namespace Prova.API.Controllers
         public ProvaController(IMoedaService moedaService)
         {
             _moedaService = moedaService;
+            InitJob();
         }
 
         [HttpPost]
@@ -27,7 +29,18 @@ namespace Prova.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetItemFila()
         {
-            return Ok(await _moedaService.GetMoedas());
+            var response = await _moedaService.GetMoedas();
+
+            if (response != null)
+                return Ok(response);
+
+            return NoContent();
+        }
+
+        private async void InitJob()
+        {
+            //RecurringJob.AddOrUpdate(() => _moedaService.GetMoedas(), Cron.MinuteInterval(2));
+            RecurringJob.AddOrUpdate(() => _moedaService.Teste(), Cron.Minutely());
         }
     }
 }

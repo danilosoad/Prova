@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Hangfire;
+using Hangfire.MemoryStorage;
+using Microsoft.Extensions.DependencyInjection;
 using Prova.Core.Entity.Moeda.Repository;
 using Prova.Core.Entity.Moeda.Service;
 using Prova.Infra.Data.DataConxtext;
@@ -16,6 +18,10 @@ namespace Prova.Infra.IoC
             //Data
             services.AddScoped<DataContext>();
             services.AddScoped<IMoedaRepository, MoedaRepository>();
+
+            //Jobs
+            services.AddHangfire(configuration => configuration.UseMemoryStorage());
+            services.AddHangfireServer();
         }
     }
 }
